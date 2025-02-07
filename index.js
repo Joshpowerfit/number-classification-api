@@ -7,6 +7,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to the Number Classification API. Use /api/classify-number?number=<num>" });
+});
+
 // Function to check if a number is prime
 function isPrime(num) {
     if (num < 2) return false;
